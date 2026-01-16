@@ -1,0 +1,16 @@
+DOMAIN-SUFFIX,bard.google.com
+DOMAIN-SUFFIX,gemini.google.com
+DOMAIN-SUFFIX,deepmind.com
+DOMAIN-SUFFIX,deepmind.google
+DOMAIN-SUFFIX,generativelanguage.googleapis.com
+DOMAIN-REGEX,^.*-pa\.googleapis\.com$
+DOMAIN,ai.google.dev
+DOMAIN,aistudio.google.com
+DOMAIN,apis.google.com
+DOMAIN-SUFFIX,makersuite.google.com
+DOMAIN-REGEX,^.*-pa\.clients6\.google\.com$
+DOMAIN-SUFFIX,generativeai.google
+DOMAIN-KEYWORD,colab
+DOMAIN-KEYWORD,developerprofiles
+DOMAIN-KEYWORD,generativelanguage
+DOMAIN-SUFFIX,genspark.ai
