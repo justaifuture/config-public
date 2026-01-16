@@ -1,0 +1,637 @@
+global-ua: clash
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7894
+ipv6: true
+allow-lan: true
+unified-delay: true
+tcp-concurrent: true
+geodata-mode: false
+geodata-loader: standard
+geo-auto-update: true
+geo-update-interval: 48
+geox-url:
+  geoip: 'https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat'
+  geosite: >-
+    https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat
+  mmdb: >-
+    https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb
+  asn: >-
+    https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb
+external-controller: '0.0.0.0:9090'
+secret: ''
+external-ui: ui
+external-ui-url: 'https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip'
+find-process-mode: strict
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 30
+profile:
+  store-selected: true
+  store-fake-ip: true
+tun:
+  enable: true
+  stack: mixed
+  mtu: 9000
+  dns-hijack:
+    - 'any:53'
+    - 'tcp://any:53'
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  override-destination: true
+  parse-pure-ip: false
+  sniff:
+    HTTP:
+      ports:
+        - 80
+        - 8080-8880
+    TLS:
+      ports:
+        - 443
+        - 8443
+    QUIC:
+      ports:
+        - 443
+  force-domain:
+    - +.v2ex.com
+    - +.netflix.com
+    - +.nflxvideo.net
+    - +.amazonaws.com
+    - +.media.dssott.com
+dns:
+  enable: true
+  listen: '0.0.0.0:7874'
+  ipv6: true
+  use-hosts: true
+  respect-rules: true
+  enhanced-mode: redir-host
+  default-nameserver:
+    - 119.29.29.29
+    - 114.114.114.114
+    - 223.5.5.5
+  proxy-server-nameserver:
+    - 119.29.29.29
+    - 114.114.114.114
+    - 223.5.5.5
+  nameserver:
+    - 'https://101.101.101.101/dns-query'
+    - 'https://dns.cloudflare.com/dns-query'
+    - 'https://v.recipes/dns-query'
+    - 'https://one.one.one.one/dns-query'
+  nameserver-policy:
+    'rule-set:ai,myproxy,myai':
+      - 'https://101.101.101.101/dns-query#disable-ipv6=true'
+      - 'https://dns.cloudflare.com/dns-query#disable-ipv6=true'
+      - 'https://v.recipes/dns-query#disable-ipv6=true'
+      - 'https://one.one.one.one/dns-query#disable-ipv6=true'
+    'geosite:microsoft@cn,category-games@cn,cn,tld-cn,category-ntp':
+      - 119.29.29.29
+      - 114.114.114.114
+      - 223.5.5.5
+  direct-nameserver:
+    - 119.29.29.29
+    - 114.114.114.114
+    - 223.5.5.5
+pr:
+  type: select
+  proxies:
+    - "\U0001F680 节点选择"
+    - "\U0001F52F 香港故转"
+    - "\U0001F52F 日本故转"
+    - ♻️ 香港自动
+    - ♻️ 日本自动
+    - ♻️ 美国自动
+    - ♻️ 自动选择
+    - "\U0001F1ED\U0001F1F0 香港节点"
+    - "\U0001F1EF\U0001F1F5 日本节点"
+    - "\U0001F1FA\U0001F1F2 美国节点"
+    - "\U0001F310 全部节点"
+proxy-groups:
+  - name: "\U0001F680 我的代理"
+    type: select
+    include-all: true
+  - name: "\U0001F680 节点选择"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: "\U0001F916 ChatGPT"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: "\U0001F4F9 YouTube"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: "\U0001F340 Google"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: "\U0001F468\U0001F3FF‍\U0001F4BB GitHub"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: "\U0001F42C OneDrive"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: "\U0001FA9F Microsoft"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: "\U0001F3B5 TikTok"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: "\U0001F4F2 Telegram"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: "\U0001F3A5 NETFLIX"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: ✈️ Speedtest
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+    include-all: true
+  - name: "\U0001F4B6 PayPal"
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+    include-all: true
+  - name: "\U0001F34E Apple"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: "\U0001F3AF 全球直连"
+    type: select
+    proxies:
+      - "\U0001F7E2 直连"
+      - "\U0001F680 节点选择"
+  - name: "\U0001F41F 漏网之鱼"
+    include-all: true
+    type: select
+    proxies:
+      - "\U0001F680 节点选择"
+      - "\U0001F52F 香港故转"
+      - "\U0001F52F 日本故转"
+      - ♻️ 香港自动
+      - ♻️ 日本自动
+      - ♻️ 美国自动
+      - ♻️ 自动选择
+      - "\U0001F1ED\U0001F1F0 香港节点"
+      - "\U0001F1EF\U0001F1F5 日本节点"
+      - "\U0001F1FA\U0001F1F2 美国节点"
+      - "\U0001F310 全部节点"
+  - name: "\U0001F1ED\U0001F1F0 香港节点"
+    type: select
+    include-all: true
+    filter: (?i)港|hk|hongkong|hong kong
+  - name: "\U0001F1EF\U0001F1F5 日本节点"
+    type: select
+    include-all: true
+    filter: (?i)日|jp|japan
+  - name: "\U0001F1FA\U0001F1F2 美国节点"
+    type: select
+    include-all: true
+    filter: (?i)美|us|unitedstates|united states
+  - name: "\U0001F52F 香港故转"
+    type: fallback
+    include-all: true
+    tolerance: 20
+    interval: 86400
+    filter: (?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$
+  - name: "\U0001F52F 日本故转"
+    type: fallback
+    include-all: true
+    tolerance: 20
+    interval: 86400
+    filter: (?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$
+  - name: ♻️ 香港自动
+    type: url-test
+    include-all: true
+    tolerance: 20
+    interval: 86400
+    filter: (?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$
+  - name: ♻️ 日本自动
+    type: url-test
+    include-all: true
+    tolerance: 20
+    interval: 86400
+    filter: (?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$
+  - name: ♻️ 美国自动
+    type: url-test
+    include-all: true
+    tolerance: 20
+    interval: 86400
+    filter: (?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$
+  - name: ♻️ 自动选择
+    type: url-test
+    include-all: true
+    tolerance: 20
+    interval: 86400
+    filter: ^((?!(直连)).)*$
+  - name: "\U0001F310 全部节点"
+    type: select
+    include-all: true
+rules:
+  - "RULE-SET,mydirect,\U0001F7E2 直连"
+  - "RULE-SET,myproxy,\U0001F680 我的代理"
+  - "RULE-SET,LocalAreaNetwork,\U0001F7E2 直连"
+  - "RULE-SET,private_domain,\U0001F7E2 直连"
+  - 'GEOSITE,CN,DIRECT'
+  - 'GEOIP,CN,DIRECT'
+  - "RULE-SET,apple_domain,\U0001F34E Apple"
+  - "RULE-SET,ai,\U0001F916 ChatGPT"
+  - "RULE-SET,myai,\U0001F916 ChatGPT"
+  - "RULE-SET,github_domain,\U0001F468\U0001F3FF‍\U0001F4BB GitHub"
+  - "RULE-SET,youtube_domain,\U0001F4F9 YouTube"
+  - "RULE-SET,google_domain,\U0001F340 Google"
+  - "RULE-SET,onedrive_domain,\U0001F42C OneDrive"
+  - "RULE-SET,microsoft_domain,\U0001FA9F Microsoft"
+  - "RULE-SET,tiktok_domain,\U0001F3B5 TikTok"
+  - 'RULE-SET,speedtest_domain,✈️ Speedtest'
+  - "RULE-SET,telegram_domain,\U0001F4F2 Telegram"
+  - "RULE-SET,netflix_domain,\U0001F3A5 NETFLIX"
+  - "RULE-SET,paypal_domain,\U0001F4B6 PayPal"
+  - "RULE-SET,geolocation-!cn,\U0001F680 节点选择"
+  - "RULE-SET,cn_domain,\U0001F3AF 全球直连"
+  - "RULE-SET,google_ip,\U0001F340 Google,no-resolve"
+  - "RULE-SET,netflix_ip,\U0001F3A5 NETFLIX,no-resolve"
+  - "RULE-SET,telegram_ip,\U0001F4F2 Telegram,no-resolve"
+  - "RULE-SET,cn_ip,\U0001F3AF 全球直连"
+  - "MATCH,\U0001F41F 漏网之鱼"
+rule-anchor:
+  ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+  domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+  qcy:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: text
+  class:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+rule-providers:
+  LocalAreaNetwork:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: >-
+      https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+  private_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs
+  ai:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs
+  youtube_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs
+  google_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs
+  github_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs
+  telegram_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs
+  netflix_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs
+  paypal_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs
+  onedrive_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs
+  microsoft_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs
+  apple_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs
+  speedtest_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs
+  tiktok_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs
+  gfw_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs
+  geolocation-!cn:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs
+  cn_domain:
+    type: http
+    interval: 86400
+    behavior: domain
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs
+  cn_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs
+  google_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs
+  telegram_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs
+  netflix_ip:
+    type: http
+    interval: 86400
+    behavior: ipcidr
+    format: mrs
+    url: >-
+      https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs
+  mydirect:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: >-
+      https://raw.githubusercontent.com/justaifuture/config-public/refs/heads/main/clash/MyDirectList.list
+  myproxy:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: >-
+      https://raw.githubusercontent.com/justaifuture/config-public/refs/heads/main/clash/MyProxyList.list
+  myai:
+    type: http
+    interval: 86400
+    behavior: classical
+    format: text
+    url: >-
+      https://raw.githubusercontent.com/justaifuture/config-public/refs/heads/main/clash/MyAiList.list
+# proxy-providers:
+#   Airport_01:
+#     type: http
+#     interval: 1800
+#     health-check:
+#       enable: false
+#       url: 'https://www.gstatic.com/generate_204'
+#       interval: 300
+#     proxy: "\U0001F7E2 直连"
+#     url: >-
+#       https://你的机场订阅.com/sub
+proxies:
+  - name: "\U0001F7E2 直连"
+    type: direct
+    udp: true
+  - name: webshare-dialer
+    server: xxxx.xxx
+    port: 21284
+    reality-opts:
+      public-key: xxxxxxxx
+      short-id: xxxxxx
+    client-fingerprint: chrome
+    type: vless
+    uuid: xxxxx-xxxx-xxxx
+    tls: true
+    tfo: false
+    skip-cert-verify: true
+    servername: www.yahoo.com
+    network: tcp
+    udp: true
+  - name: webshare
+    type: socks5
+    server: 1.2.3.4
+    port: 7213
+    username: xxxxxx
+    password: xxxxx
+    dialer-proxy: webshare-dialer
