@@ -1,9 +1,47 @@
+# OpenAI
+DOMAIN,chat.openai.com.cdn.cloudflare.net
+DOMAIN,challenges.cloudflare.com
+DOMAIN,js.stripe.com
+DOMAIN,openaiapi-site.azureedge.net
+DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+DOMAIN,turn.livekit.cloud
+DOMAIN,workos.imgix.net
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,browser-intake-datadoghq.com
+DOMAIN-SUFFIX,chat.com
+DOMAIN-SUFFIX,crixet.com
+DOMAIN-SUFFIX,client-api.arkoselabs.com
+DOMAIN-SUFFIX,ct.sendgrid.net
+DOMAIN-SUFFIX,events.statsigapi.net
+DOMAIN-SUFFIX,featureassets.org
+DOMAIN-SUFFIX,featuregates.org
+DOMAIN-SUFFIX,identrust.com
+DOMAIN-SUFFIX,images.workoscdn.com
+DOMAIN-SUFFIX,intercom.io
+DOMAIN-SUFFIX,intercom.com
+DOMAIN-SUFFIX,intercomcdn.com
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,prodregistryv2.org
+DOMAIN-SUFFIX,sora.com
+DOMAIN-SUFFIX,statsig.com
+DOMAIN-SUFFIX,workos.com
+
+# Google Gemini
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,gemini.google.com
+
+# Google DeepMind
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
+
+# Google Generative Language API
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-REGEX,^.*-pa\.googleapis\.com$
+
+# Google AI Studio
 DOMAIN,ai.google.dev
 DOMAIN,aistudio.google.com
 DOMAIN,apis.google.com
@@ -12,7 +50,7 @@ DOMAIN-REGEX,^.*-pa\.clients6\.google\.com$
 DOMAIN-SUFFIX,generativeai.google
 DOMAIN-KEYWORD,colab
 DOMAIN-KEYWORD,developerprofiles
+DOMAIN-KEYWORD,copilot
 DOMAIN-KEYWORD,generativelanguage
 DOMAIN-SUFFIX,genspark.ai
-DOMAIN-KEYWORD,copilot
-DOMAIN-SUFFIX,oaiusercontent.com
+
