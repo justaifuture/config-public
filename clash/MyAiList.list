@@ -28,19 +28,15 @@ DOMAIN-SUFFIX,prodregistryv2.org
 DOMAIN-SUFFIX,sora.com
 DOMAIN-SUFFIX,statsig.com
 DOMAIN-SUFFIX,workos.com
-
 # Google Gemini
 DOMAIN-SUFFIX,bard.google.com
 DOMAIN-SUFFIX,gemini.google.com
-
 # Google DeepMind
 DOMAIN-SUFFIX,deepmind.com
 DOMAIN-SUFFIX,deepmind.google
-
 # Google Generative Language API
 DOMAIN-SUFFIX,generativelanguage.googleapis.com
 DOMAIN-REGEX,^.*-pa\.googleapis\.com$
-
 # Google AI Studio
 DOMAIN,ai.google.dev
 DOMAIN,aistudio.google.com
@@ -53,4 +49,5 @@ DOMAIN-KEYWORD,developerprofiles
 DOMAIN-KEYWORD,copilot
 DOMAIN-KEYWORD,generativelanguage
 DOMAIN-SUFFIX,genspark.ai
-
+DOMAIN-SUFFIX,anyrouter.top
+DOMAIN-SUFFIX,packyapi.com
