@@ -1,4 +1,6 @@
 # 内容：MyDirectList
+PROCESS-NAME,zerotier-one
+DST-PORT,9993/9994
 # OneDrive
 DOMAIN-KEYWORD,1drv
 DOMAIN-KEYWORD,onedrive
