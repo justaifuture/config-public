@@ -2,6 +2,10 @@
 PROCESS-NAME,zerotier-one
 DST-PORT,9993/9994
 # OneDrive
+DOMAIN-SUFFIX,cfp.cc.cd
+DOMAIN-SUFFIX,hpk.de5.net
+DOMAIN-SUFFIX,iaiu.dpdns.org
+DOMAIN-SUFFIX,justai.dpdns.org
 DOMAIN-KEYWORD,1drv
 DOMAIN-KEYWORD,onedrive
 DOMAIN-KEYWORD,skydrive
